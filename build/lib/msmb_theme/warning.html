@@ -1,0 +1,25 @@
+<div class="warning-wrapper" id="old_warning">
+</div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $.getJSON("{{ base_url }}/versions.json")
+        .done(function(data) {
+          numItems = data.length;
+          for (var i = 0; i < numItems; i++) {
+              console.log(DOCUMENTATION_OPTIONS.VERSION);
+              console.log(data[i].version);
+              if (data[i].version == DOCUMENTATION_OPTIONS.VERSION) {
+                  if (! data[i].latest) {
+                      $("#old_warning").append("<p>Warning: This documentation is for {{ project }} <strong>version {{ release|e }}</strong>. &mdash; <a href='{{ base_url }}'> Latest stable version</a></p></p>");
+                      break;
+                  }
+              }
+          }
+          
+      })
+      .fail(function(d, textStatus, error) {
+        console.error("getJSON failed, status: " + textStatus + ", error: "+error);
+      });
+});
+</script>

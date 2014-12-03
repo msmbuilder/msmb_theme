@@ -1,0 +1,20 @@
+Metadata-Version: 1.1
+Name: msmb-theme
+Version: 0.1.5
+Summary: ReadTheDocs.org theme for Sphinx, 2013 version.
+Home-page: https://github.com/snide/sphinx_rtd_theme/
+Author: Dave Snider
+Author-email: dave.snider@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Environment :: Console
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Documentation
+Classifier: Topic :: Software Development :: Documentation

@@ -1905,6 +1905,7 @@ select {
     border:1px solid #ccc;
     background-color:#fff
 }
+
 select[multiple] {
     height:auto
 }

@@ -2,3 +2,5 @@ versioneer.pyc
 *.egg-info
 dist
 build
+__pycache__
+*.pyc

@@ -8,3 +8,5 @@ recursive-include msmb_theme *.js
 recursive-include msmb_theme *.svg
 recursive-include msmb_theme *.ttf
 recursive-include msmb_theme *.woff
+include versioneer.py
+include msmb_theme/_version.py

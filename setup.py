@@ -8,18 +8,22 @@
 
 """
 from setuptools import setup
-from msmb_theme import __version__
-
+import versioneer
+versioneer.VCS = 'git'
+versioneer.versionfile_source = 'msmb_theme/_version.py'
+versioneer.versionfile_build = 'msmb_theme/_version.py'
+versioneer.tag_prefix = '' # tags are like 1.2.0
+versioneer.parentdir_prefix = 'msmb_theme-' # dirname like 'myproject-1.2.0'
 
 setup(
-    name='msmb_theme',
-    version=__version__,
+   name='msmb_theme',
+    version=versioneer.get_version(),
+    cmdclass=versioneer.get_cmdclass(),
     url='https://github.com/snide/sphinx_rtd_theme/',
     license='MIT',
     author='Dave Snider',
     author_email='dave.snider@gmail.com',
     description='ReadTheDocs.org theme for Sphinx, 2013 version.',
-    #long_description=open('README.rst').read(),
     zip_safe=False,
     packages=['msmb_theme'],
     package_data={'msmb_theme': [
@@ -30,7 +34,6 @@ setup(
         'static/font/*.*'
     ]},
     include_package_data=True,
-    #install_requires=open('requirements.txt').read().splitlines(),
     classifiers=[
         'Development Status :: 3 - Alpha',
         'License :: OSI Approved :: BSD License',

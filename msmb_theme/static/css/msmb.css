@@ -12,7 +12,11 @@
     width: 300px;
 }
 
-p.caption {
+.rst-content p.caption {
     font-size: 100%;
     font-weight: unset;
+}
+
+.rst-content .section ol li {
+    margin-bottom: 0.3em;
 }

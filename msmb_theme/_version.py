@@ -36,7 +36,7 @@ def get_config():
     cfg = VersioneerConfig()
     cfg.VCS = "git"
     cfg.style = "pep440"
-    cfg.tag_prefix = """"
+    cfg.tag_prefix = ""
     cfg.parentdir_prefix = "msmb_theme-"
     cfg.versionfile_source = "msmb_theme/_version.py"
     cfg.verbose = False

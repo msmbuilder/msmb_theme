@@ -3,3 +3,7 @@
 .wy-side-nav-search {
     background-color: #ffffff;
 }
+
+.wy-table-responsive table td {
+    white-space: normal;
+}

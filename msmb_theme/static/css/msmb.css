@@ -7,3 +7,12 @@
 .wy-table-responsive table td {
     white-space: normal;
 }
+
+.rst-content .align-right {
+    width: 300px;
+}
+
+p.caption {
+    font-size: 100%;
+    font-weight: unset;
+}

@@ -1,12 +1,8 @@
 include LICENSE
 recursive-include msmb_theme *.conf
 recursive-include msmb_theme *.css
-recursive-include msmb_theme *.eot
 recursive-include msmb_theme *.html
 recursive-include msmb_theme *.js
-recursive-include msmb_theme *.svg
-recursive-include msmb_theme *.ttf
-recursive-include msmb_theme *.woff
 include setup.cfg
 include versioneer.py
 include msmb_theme/_version.py

@@ -11,7 +11,7 @@ from setuptools import setup
 import versioneer
 
 setup(
-   name='msmb_theme',
+    name='msmb_theme',
     version=versioneer.get_version(),
     cmdclass=versioneer.get_cmdclass(),
     url='https://github.com/msmbuilder/msmb_theme/',
@@ -23,10 +23,7 @@ setup(
     packages=['msmb_theme'],
     package_data={'msmb_theme': [
         'theme.conf',
-        '*.html',
         'static/css/*.css',
-        'static/js/*.js',
-        'static/font/*.*'
     ]},
     include_package_data=True,
     classifiers=[

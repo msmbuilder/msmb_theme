@@ -5,10 +5,17 @@ os.chdir("notebook")
 
 # Check for clean submodule
 unclean = "Please clean up your `notebook/` submodule!"
-assert subprocess.check_output(['git', 'clean', '-ndx']) == b'', unclean
+gitout = subprocess.check_output(['git', 'clean', '-ndx'])
+if gitout == b'Would remove notebook/static/components/\n':
+    pass
+elif gitout == b'':
+    subprocess.check_call(['npm', 'install', '-g', 'bower'])
+    subprocess.check_call(['bower', 'install'])
+else:
+    print(gitout)
+    raise RuntimeError(unclean)
 
-subprocess.check_call(['npm', 'install', '-g', 'bower'])
-subprocess.check_call(['bower', 'install'])
+print("Calling lessc")
 subprocess.check_call([
     'lessc',
     '--include-path="./notebook/static"',

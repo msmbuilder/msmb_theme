@@ -1,5 +1,5 @@
 @import 'theme.css';
-@import 'jupyter.css';
+@import 'jupyter.min.css';
 
 .wy-side-nav-search {
     background-color: #ffffff;

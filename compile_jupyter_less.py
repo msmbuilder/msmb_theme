@@ -9,7 +9,9 @@ gitout = subprocess.check_output(['git', 'clean', '-ndx'])
 if gitout == b'Would remove notebook/static/components/\n':
     pass
 elif gitout == b'':
-    subprocess.check_call(['npm', 'install', '-g', 'bower'])
+    subprocess.check_call([
+        'npm', 'install', '-g', 'bower', 'less', 'less-plugin-clean-css'
+    ])
     subprocess.check_call(['bower', 'install'])
 else:
     print(gitout)
@@ -18,7 +20,8 @@ else:
 print("Calling lessc")
 subprocess.check_call([
     'lessc',
+    '--clean-css',
     '--include-path="./notebook/static"',
     'notebook/static/style/style.less',
-    '../msmb_theme/static/css/jupyter.css'
+    '../msmb_theme/static/css/jupyter.min.css'
 ])

@@ -5,6 +5,10 @@
     background-color: #ffffff;
 }
 
+.wy-side-nav-search > div.version {
+    color: rgba(0, 0, 0, 0.74);
+}
+
 .wy-table-responsive table td {
     white-space: normal;
 }

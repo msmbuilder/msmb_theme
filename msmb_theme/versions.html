@@ -1,0 +1,60 @@
+<script>
+// when the user changes their selection in the dropdown menu, navigate
+// to a new set of root documentation
+$(document).ready(function() {
+    $('#versionselector').change(function(){
+        window.location.href = $('#versionselector option:selected').attr('url');
+    });
+});
+
+// get all of the releases from versions.json, and use these to populate the
+// dropdown menu of different releases
+$(document).ready(function() {
+    $.getJSON("{{ base_url }}/versions.json")
+      .done(function(data) {
+          numItems = data.length;
+          tags = [];
+          for (var i = 0; i < numItems; i++) {
+              tags.push({ value : data[i].version, url : data[i].url })
+          }
+          tags = tags.sort(function(a,b) { a.value < b.value }).reverse();
+
+          for (var i = 0; i < numItems; i++) {
+              var temp = {value : tags[i].value, 'url' : tags[i].url}
+              if (tags[i].value == '{{ release|e }}') {
+                temp['selected'] = 'selected';
+              } else {
+                temp['selected'] = null;
+              }
+              $('#versionselector')
+                .append($('<option></option>', temp)
+                .text(tags[i].value)); 
+          }
+      })
+      .fail(function(d, textStatus, error) {
+        console.error("getJSON failed, status: " + textStatus + ", error: "+error);
+      });
+});
+</script>
+
+
+<style>
+#versionselector {
+    border:1px solid #ccc;
+    background-color:#fff;
+    width:100px;
+}
+</style>
+
+
+<!-- This is the actual HTML bar at the bottom of the side bar -->
+<!-- It gives a little select menu with all of the versions of the -->
+<!-- documentation that you can switch between -->
+<div class="rst-versions" data-toggle="rst-versions">
+<span class="rst-current-version" data-toggle="rst-current-version">
+  <span class="icon icon-book"> Versions</span>
+  <form><select id="versionselector">
+      <option value="latest" url="{{ base_url }}" selected=null>latest</option>
+  </select></form>
+</span>
+</div>

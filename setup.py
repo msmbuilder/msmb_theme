@@ -23,6 +23,7 @@ setup(
     packages=['msmb_theme'],
     package_data={'msmb_theme': [
         'theme.conf',
+        'versions.html',
         'static/css/*.css',
     ]},
     include_package_data=True,

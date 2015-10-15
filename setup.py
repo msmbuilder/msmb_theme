@@ -23,8 +23,9 @@ setup(
     packages=['msmb_theme'],
     package_data={'msmb_theme': [
         'theme.conf',
-        'versions.html',
+        '*.html',
         'static/css/*.css',
+        'static/js/*.js',
     ]},
     include_package_data=True,
     classifiers=[

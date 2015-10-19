@@ -9,7 +9,6 @@ $(document).ready(function () {
             $.each(data.sort(function (a, b) {
                 return a.version > b.version
             }), function (i, item) {
-                // TODO: select default
                 $("<dd>").append(
                     $("<a>").text(item.version).attr('href', item.url)
                 ).appendTo("#versionselector");

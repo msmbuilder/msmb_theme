@@ -1,0 +1,41 @@
+From 2034e5eb62cad8a429d326039bf68841edc7fc9e Mon Sep 17 00:00:00 2001
+From: Matthew Harrigan <harrigan@stanford.edu>
+Date: Tue, 13 Oct 2015 17:57:57 -0700
+Subject: [PATCH] Wrap style.less with .jupyter class
+
+---
+ notebook/static/style/style.less | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+diff --git a/notebook/static/style/style.less b/notebook/static/style/style.less
+index f87f0e7..6a97796 100644
+--- a/notebook/static/style/style.less
++++ b/notebook/static/style/style.less
+@@ -3,6 +3,9 @@
+ * Twitter Bootstrap
+ *
+ */
++
++.jupyter {
++
+ @import "../components/bootstrap/less/bootstrap.less";
+ 
+ /*!
+@@ -11,7 +14,7 @@
+ *
+ */
+ @import "../components/font-awesome/less/font-awesome.less";
+-@fa-font-path:    "../components/font-awesome/fonts";
++//@fa-font-path: "../components/font-awesome/fonts";
+ 
+ // base
+ @import "../base/less/style.less";
+@@ -33,3 +36,5 @@
+ 
+ // terminal
+ @import "../terminal/less/terminal.less";
++
++}
+-- 
+2.6.1
+

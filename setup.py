@@ -9,21 +9,16 @@
 """
 from setuptools import setup
 import versioneer
-versioneer.VCS = 'git'
-versioneer.versionfile_source = 'msmb_theme/_version.py'
-versioneer.versionfile_build = 'msmb_theme/_version.py'
-versioneer.tag_prefix = '' # tags are like 1.2.0
-versioneer.parentdir_prefix = 'msmb_theme-' # dirname like 'myproject-1.2.0'
 
 setup(
-   name='msmb_theme',
+    name='msmb_theme',
     version=versioneer.get_version(),
     cmdclass=versioneer.get_cmdclass(),
-    url='https://github.com/snide/sphinx_rtd_theme/',
+    url='https://github.com/msmbuilder/msmb_theme/',
     license='MIT',
-    author='Dave Snider',
-    author_email='dave.snider@gmail.com',
-    description='ReadTheDocs.org theme for Sphinx, 2013 version.',
+    author='Matthew Harrigan',
+    author_email='matthew.harrigan@outlook.com',
+    description='Modification to sphinx_rtd_theme',
     zip_safe=False,
     packages=['msmb_theme'],
     package_data={'msmb_theme': [
@@ -31,12 +26,11 @@ setup(
         '*.html',
         'static/css/*.css',
         'static/js/*.js',
-        'static/font/*.*'
     ]},
     include_package_data=True,
     classifiers=[
-        'Development Status :: 3 - Alpha',
-        'License :: OSI Approved :: BSD License',
+        'Development Status :: 5 - Production/Stable',
+        'License :: OSI Approved :: MIT License',
         'Environment :: Console',
         'Environment :: Web Environment',
         'Intended Audience :: Developers',

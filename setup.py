@@ -40,4 +40,5 @@ setup(
         'Topic :: Documentation',
         'Topic :: Software Development :: Documentation',
     ],
+    install_requires=['sphinx_rtd_theme'],
 )
